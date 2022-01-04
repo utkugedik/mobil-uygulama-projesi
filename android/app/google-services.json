@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "605622738861",
+    "project_id": "mobil-programlama-odev",
+    "storage_bucket": "mobil-programlama-odev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605622738861:android:6501c312567d201f890b24",
+        "android_client_info": {
+          "package_name": "com.example.mobil_programlama_odev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605622738861-0l2dm39n3v3i5crf7hhqfur40bkj7b7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3FlflSp86GQ9VldtZWfIS0zL4K3xSbrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605622738861-0l2dm39n3v3i5crf7hhqfur40bkj7b7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
