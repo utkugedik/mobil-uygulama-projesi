@@ -40,7 +40,7 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
             const SizedBox(height: 50),
-            searchResult!.length > 4
+            searchResult != null
                 ? Card(
                     color: AppColors.gray4,
                     child: ListTile(

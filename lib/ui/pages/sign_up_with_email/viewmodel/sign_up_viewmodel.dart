@@ -59,8 +59,9 @@ class SignUpVM extends ChangeNotifier {
     String? email,
     String? password,
   }) async {
-    setLoading(true);
     try {
+      setLoading(true);
+
       if (formKeyWithEmail.currentState!.validate()) {
         await FirebaseStorage.instance.ref('profile_picture/$fileName').putFile(imageUrl!);
         await FirebaseStorage.instance.ref('profile_picture/$fileName').getDownloadURL().then((value) => url = value);

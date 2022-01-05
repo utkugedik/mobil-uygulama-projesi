@@ -14,20 +14,20 @@ class IntroductionPage extends StatelessWidget {
         pages: [
           PageViewModel(
             title: "Hemen ürünleri okutmaya başla",
-            body: "Hemen ürünleri okutmaya başla",
+            body: "Takip etmek istediğin ürünleri sisteme ekle!",
             image: Image.asset('assets/svg/barcode.jpg'),
             decoration: getPageDecoration(),
           ),
           PageViewModel(
-            title: "Hemen ürünleri okutmaya başla",
-            body: "Hemen ürünleri okutmaya başla",
-            image: Image.asset('assets/svg/barcode.jpg'),
+            title: "Marketteki ürünlerin takibini yap",
+            body: "Aldığın ürünlerin fiyat geçmişini gör",
+            image: Image.asset('assets/svg/market.jpg'),
             decoration: getPageDecoration(),
           ),
           PageViewModel(
-            title: "Hemen ürünleri okutmaya başla",
-            body: "Hemen ürünleri okutmaya başla",
-            image: Image.asset('assets/svg/barcode.jpg'),
+            title: "Ürünlerin fiyatlarını takip et",
+            body: "Sisteme kayıt edilen ürünlerin fiyat geçmişini gör",
+            image: Image.asset('assets/svg/grafik.png'),
             decoration: getPageDecoration(),
           ),
         ],

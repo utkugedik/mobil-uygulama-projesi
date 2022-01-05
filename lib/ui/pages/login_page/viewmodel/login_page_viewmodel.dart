@@ -36,7 +36,6 @@ class LoginPageVM extends ChangeNotifier {
     BuildContext context, {
     String? email,
     String? password,
-    PageRouteInfo? route,
     bool validated = false,
   }) async {
     try {

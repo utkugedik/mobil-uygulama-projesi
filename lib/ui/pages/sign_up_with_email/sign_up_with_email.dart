@@ -94,7 +94,14 @@ class SignUpWithEmailPage extends HookWidget {
                           style: AppTextStyles.p3ExtraBold.copyWith(
                             color: AppColors.mainColor,
                           ),
-                        )
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          "Fotoğraf yüklemek zorunludur",
+                          style: AppTextStyles.p3ExtraBold.copyWith(
+                            color: AppColors.mainColor,
+                          ),
+                        ),
                       ],
                     ),
                   ),

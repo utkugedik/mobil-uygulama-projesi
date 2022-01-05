@@ -17,16 +17,6 @@ class HomeTabMainAppBar extends HookWidget with PreferredSizeWidget {
     final CollectionReference _market = firebase.collection('market');
 
     return AppBar(
-      title: TextButton(
-        onPressed: () async {
-          await FirebaseAuth.instance.signOut();
-          context.replaceRoute(const LogInRoute());
-        },
-        child: Text(
-          'Cikis yap',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
       backgroundColor: AppColors.whiteColor,
       automaticallyImplyLeading: false,
       // ignore: deprecated_member_use

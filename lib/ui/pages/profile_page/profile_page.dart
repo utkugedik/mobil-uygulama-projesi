@@ -1,14 +1,13 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:file_picker/file_picker.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+
 import 'package:flutter/material.dart';
-import 'package:mobil_programlama_odev/core/routing/routing.gr.dart';
+
 import 'package:mobil_programlama_odev/ui/shared/extensions/context_extensions.dart';
-import 'package:mobil_programlama_odev/ui/shared/styles/colors.dart';
-import 'package:mobil_programlama_odev/ui/shared/styles/text_styles.dart';
+
 import 'package:mobil_programlama_odev/ui/shared/widgets/bottom_model_sheet/modal_bottom_sheet_item.dart';
 import 'package:mobil_programlama_odev/ui/shared/widgets/bottom_sheet_menu.dart';
 import 'package:mobil_programlama_odev/ui/shared/widgets/custom_appbar.dart';
@@ -24,14 +23,20 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  File? file;
-  String? fileName;
-  late String url;
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     FirebaseFirestore.instance.collection('user').doc(FirebaseAuth.instance.currentUser?.uid).get().then((value) {
       url = value['kullanici_fotosu'];
     });
+    setState(() {});
+  }
+
+  File? file;
+  String? fileName;
+  String? url;
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(),
       body: SingleChildScrollView(
@@ -66,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ],
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 21),
-                        child: url != null ? Image.network(url) : UserAvatar(size: 120),
+                        child: url != null ? Image.network(url ?? '') : const UserAvatar(size: 120),
                       ),
                     ),
                   ],
@@ -89,7 +94,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 onPressed: () async {
                   try {
                     await FirebaseAuth.instance.currentUser?.delete();
-                    // context.replaceRoute(const IntroductionRoute());
+                    context.router.popUntilRoot();
                   } on FirebaseAuthException catch (e) {
                     context.showSnackBar(message: e.message);
                   }
